@@ -1,0 +1,9 @@
+.config
+.git
+.local
+.pki
+.vscode
+.viminfo
+.pylint.d
+.cache
+.bash_history
