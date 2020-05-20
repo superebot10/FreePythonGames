@@ -19,29 +19,28 @@ def value():
 ball = vector(0, 0)
 aim = vector(value(), value())
 colors = ["red", "green", "blue", "yellow", "purple"]
-color_val = "red"
+ballcolor = colors[random.randint(0, 4)]
 
 def draw():
     "Move ball and draw game."
-    ball.move(aim * 5)  #speed
+    ball.move(aim * 3)  #speed
     aim.rotate(random.random() * -5) #curvature
 
     x = ball.x
     y = ball.y
 
-    global color_val
+    global ballcolor
 
     if x < -200 or x > 200:
         aim.x = -aim.x
-        color_val = colors[random.randint(0, 4)]
+        ballcolor = colors[random.randint(0, 4)]
 
     if y < -200 or y > 200:
         aim.y = -aim.y
-        color_val = colors[random.randint(0, 4)]
-
+        ballcolor = colors[random.randint(0, 4)]
     #clear()
     turtle.goto(x, y)
-    turtle.dot(10, color_val)
+    turtle.dot(10, ballcolor)
 
     turtle.ontimer(draw, 50)
 
